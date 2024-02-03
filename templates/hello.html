@@ -1,4 +1,50 @@
-<!doctype html>
-<title>Flask Server</title>
-<h1> bonjour from Paris !</h1>
-<p>Mon chat est noir</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page avec Paragraphes et Courbe</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Inclusion de Chart.js -->
+</head>
+<body>
+
+    <h1>Informations avec Courbe</h1>
+
+    <!-- Trois Paragraphes -->
+    <p>Ceci est le premier paragraphe de démonstration.</p>
+    <p>Voici un deuxième paragraphe, pour plus de contexte.</p>
+    <p>Enfin, un troisième paragraphe complète cette section.</p>
+
+    <!-- Emplacement de la courbe -->
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <script>
+        // Configuration de la courbe
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line', // Type de courbe
+            data: {
+                labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin'],
+                datasets: [{
+                    label: 'Nombre de visiteurs',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
