@@ -21,9 +21,9 @@ def meteo():
     json_content = json.loads(raw_content.decode('utf-8'))
     results = []
     for list_element in json_content.get('list', []):
-        dt_value = datetime.utcfromtimestamp(list_element.get('dt')).strftime('%Y-%m-%d')
-        temp_day_value = list_element.get('temp', {}).get('day', 0) - 273.15  # Conversion de Kelvin en °C
-        results.append({'Jour': dt_value, 'Température': round(temp_day_value, 2)})
+        dt_value = list_element.get('dt')
+        temp_day_value = list_element.get('temp', {}).get('day') - 273.15 # Conversion de Kelvin en °c 
+        results.append({'Jour': dt_value, 'temp': temp_day_value})
     return jsonify(results=results)
 
                                                                                                                                        
