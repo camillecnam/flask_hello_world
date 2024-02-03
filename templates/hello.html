@@ -2,49 +2,67 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Page avec Paragraphes et Courbe</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Inclusion de Chart.js -->
+    <title>Bonjour dans ton nouvel univers</title>
+    <style>
+        body {
+            background-color: #f2f2f2; /* Gris pâle */
+            font-family: Arial, sans-serif;
+        }
+        .titre {
+            color: darkred; /* Rouge foncé */
+            text-align: center;
+        }
+        .lien-info {
+            color: green; /* Vert */
+            text-decoration: none; /* Optionnel: enlève le soulignement */
+            font-size: 16px;
+        }
+        .conteneur {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .bloc {
+            text-align: center;
+            width: 30%;
+        }
+        .bloc img {
+            width: 100%; /* Ajuste la largeur de l'image au bloc */
+            height: auto;
+        }
+        .description {
+            margin-top: 10px;
+        }
+        .chat { color: blue; }
+        .fuji { color: purple; }
+        .anime { color: pink; }
+    </style>
 </head>
 <body>
 
-    <h1>Informations avec Courbe</h1>
+<h1 class="titre">Bonjour dans ton nouvel univers</h1>
 
-    <!-- Trois Paragraphes -->
-    <p>Ceci est le premier paragraphe de démonstration.</p>
-    <p>Voici un deuxième paragraphe, pour plus de contexte.</p>
-    <p>Enfin, un troisième paragraphe complète cette section.</p>
+<div style="text-align: center;">
+    <img src="lien_vers_image_montagnes_enneigees" alt="Montagnes enneigées" style="width: 48%; height: auto;">
+    <div style="display: inline-block; vertical-align: top;">
+        <a href="https://fr.surveymonkey.com/resources/" class="lien-info">Rendez-vous ici pour plus d'informations</a>
+    </div>
+</div>
 
-    <!-- Emplacement de la courbe -->
-    <canvas id="myChart" width="400" height="200"></canvas>
-
-    <script>
-        // Configuration de la courbe
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'pie', // Type de courbe
-            data: {
-                labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin'],
-                datasets: [{
-                    label: 'Nombre de visiteurs',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
+<div class="conteneur">
+    <div class="bloc">
+        <img src="lien_vers_image_chat" alt="Chat">
+        <div class="description chat">Hello je suis mignon</div>
+    </div>
+    <div class="bloc">
+        <img src="lien_vers_image_mont_fuji" alt="Mont Fuji">
+        <div class="description fuji">randonnées de qualité</div>
+    </div>
+    <div class="bloc">
+        <img src="lien_vers_image_generique_anime" alt="Dessin Karachi dans Naruto">
+        <div class="description anime">des animés de folie</div>
+    </div>
+</div>
 
 </body>
 </html>
